@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Hoang Tran Portfolio favicon</title>
+  <rect width="512" height="512" rx="96" fill="#172B4D"/>
+  <path d="M174 142V370M338 142V370M174 256H338"
+        fill="none" stroke="#FFFFFF" stroke-width="34" stroke-linecap="butt" stroke-linejoin="round"/>
+  <rect x="172" y="402" width="168" height="28" rx="14" fill="#20C4C8"/>
+</svg>
