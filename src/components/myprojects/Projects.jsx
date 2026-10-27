@@ -1,10 +1,5 @@
 import React from "react";
-
 import java from "../../assets/java.PNG";
-import react from "../../assets/react.PNG";
-import quizApp from "../../assets/quizApp.PNG";
-import urheilija from "../../assets/urheilija.PNG";
-import todolist from "../../assets/todolist.png";
 import moviesearch from "../../assets/moviesearch.PNG";
 import rabbitcounter from "../../assets/rabbitcounter.png";
 import scoreboard from "../../assets/scoreboard.PNG";
