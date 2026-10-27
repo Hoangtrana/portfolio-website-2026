@@ -1,0 +1,198 @@
+.hero-terminal {
+  position: relative;
+  width: min(46rem, 100%);
+  max-height: min(21rem, 46svh);
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-terminal-border);
+  border-radius: 0.85rem;
+  background: var(--color-terminal-bg);
+  color: var(--color-terminal-text);
+  box-shadow: 0 1rem 2.5rem rgba(18, 35, 43, 0.16);
+  text-align: left;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.79rem;
+}
+
+.terminal__titlebar {
+  flex: 0 0 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 0.85rem;
+  border-bottom: 1px solid var(--color-terminal-border);
+  background: var(--color-terminal-header);
+}
+
+.terminal__window-controls {
+  display: flex;
+  gap: 0.38rem;
+}
+
+.terminal__window-controls span {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #68747c;
+}
+
+.terminal__window-controls span:first-child { background: #e98c83; }
+.terminal__window-controls span:nth-child(2) { background: #e3c475; }
+.terminal__window-controls span:nth-child(3) { background: #77c69e; }
+
+.terminal__title {
+  color: var(--color-terminal-muted);
+  font-size: 0.72rem;
+}
+
+.terminal__title-spacer,
+.terminal__window-controls { width: 2.3rem; }
+
+.terminal__output {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 13rem;
+  overflow: auto;
+  padding: 0.85rem 1rem 0.4rem;
+  scrollbar-color: #52616b var(--color-terminal-bg);
+  scrollbar-width: thin;
+}
+
+.terminal__entry + .terminal__entry { margin-top: 0.65rem; }
+
+.terminal__command-line {
+  margin-bottom: 0.38rem;
+  color: var(--color-on-primary);
+  overflow-wrap: anywhere;
+}
+
+.terminal__prompt,
+.terminal__commands code {
+  color: var(--color-terminal-accent);
+}
+
+.terminal__line {
+  margin: 0.25rem 0;
+  color: var(--color-terminal-text);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.terminal__line a {
+  color: var(--color-terminal-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.terminal__commands {
+  list-style: none;
+  padding: 0;
+  margin: 0.3rem 0 0.1rem;
+}
+
+.terminal__commands button {
+  display: flex;
+  align-items: baseline;
+  gap: 0.42rem;
+  padding: 0.13rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-terminal-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.terminal__commands button:hover,
+.terminal__commands button:focus-visible { color: #fff; }
+
+.terminal__commands button:focus-visible,
+.terminal__suggestions button:focus-visible,
+.terminal__input:focus-visible,
+.terminal__line a:focus-visible {
+  outline: 2px solid #72d6b1;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.terminal__commands code { font: inherit; min-width: 4.3rem; }
+
+.terminal__form {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 1rem;
+  padding: 0.65rem 0 0.6rem;
+  border-top: 1px solid var(--color-terminal-border);
+}
+
+.terminal__input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--color-on-primary);
+  font: inherit;
+  caret-color: var(--color-terminal-accent);
+}
+
+.terminal__input:focus-visible { outline: none; }
+
+.terminal__cursor {
+  flex: 0 0 0.42rem;
+  height: 1rem;
+  margin-left: -0.45rem;
+  background: var(--color-terminal-accent);
+  opacity: 0;
+  pointer-events: none;
+  animation: terminal-cursor-blink 1.1s steps(2, start) infinite;
+}
+
+.terminal__form:focus-within .terminal__cursor { opacity: 0.9; }
+
+.terminal__suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0 1rem 0.75rem;
+}
+
+.terminal__suggestions button {
+  border: 1px solid #43515a;
+  border-radius: 0.3rem;
+  padding: 0.16rem 0.4rem;
+  background: var(--color-terminal-surface);
+  color: var(--color-terminal-muted);
+  font: inherit;
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+}
+
+.terminal__suggestions button:hover {
+  border-color: var(--color-terminal-accent);
+  background: #2d3c42;
+  color: #fff;
+}
+
+@keyframes terminal-cursor-blink {
+  to { visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal__cursor { animation: none; }
+  .terminal__suggestions button { transition: none; }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-terminal {
+    max-height: min(15rem, 42svh);
+    margin-top: 1.15rem;
+  }
+}

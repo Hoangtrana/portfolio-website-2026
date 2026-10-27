@@ -1,0 +1,152 @@
+header {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: 4rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.header__container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100svh - 4rem);
+  height: auto;
+  position: relative;
+  box-sizing: border-box;
+  padding: 1.25rem 0 2rem;
+}
+
+.header__greeting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header__greeting h5 {
+  line-height: 1.2;
+}
+
+.header__name {
+  margin-bottom: 0.25rem;
+  color: var(--color-primary);
+}
+
+.header__headline {
+  margin-bottom: 0;
+  color: var(--color-text-primary);
+}
+/*CTA*/
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/*Socials media link*/
+
+.header__socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.875rem;
+  position: absolute;
+  z-index: 2;
+  top: max(1.25rem, env(safe-area-inset-top));
+  right: max(1.5rem, env(safe-area-inset-right));
+}
+
+.header__socials a {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: 0.5rem;
+  color: var(--color-primary);
+  transition: color 160ms ease, opacity 160ms ease;
+}
+
+.header__socials a:hover {
+  color: var(--color-primary-hover);
+}
+
+.header__socials a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.header__socials-logo {
+  display: block;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.header__container > .cta {
+  margin-top: 1rem;
+}
+
+/*scroll down*/
+.scroll__down {
+  position: relative;
+  display: block;
+  margin: 1rem auto 0;
+  transform: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.scroll__down_icon {
+  font-size: xx-large;
+}
+
+/*Tablet*/
+
+@media screen and (max-width: 1024px) {
+  header {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+}
+
+/*Mobile*/
+
+@media screen and (max-width: 600px) {
+  header {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-top: 3.75rem;
+  }
+
+  .hero-terminal {
+    max-height: min(15rem, 42svh);
+    margin-top: 1.15rem;
+  }
+
+  .scroll__down { margin-top: 0.75rem; }
+
+  .header__socials {
+    top: max(0.75rem, env(safe-area-inset-top));
+    right: max(0.75rem, env(safe-area-inset-right));
+    gap: 0.5rem;
+  }
+
+  .header__socials a {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__socials a {
+    transition: none;
+  }
+}
+
+@media screen and (max-height: 680px) and (max-width: 600px) {
+  .scroll__down { display: none; }
+}
