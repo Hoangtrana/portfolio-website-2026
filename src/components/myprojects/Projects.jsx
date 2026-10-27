@@ -7,7 +7,7 @@ import tenzzie from "../../assets/tenzzie.PNG";
 import finnishjobsearch from "../../assets/finnishjobsearch.png";
 import SingleProject from "./SingleProject";
 import { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const data = [
   {

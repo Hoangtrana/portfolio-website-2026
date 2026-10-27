@@ -1,6 +1,4 @@
 import React from "react";
-import HeaderSocials from "../header/HeaderSocials";
-
 import "./footer.css";
 import MyLogo from "../../assets/MyLogo.svg";
 
