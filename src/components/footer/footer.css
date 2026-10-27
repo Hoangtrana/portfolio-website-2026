@@ -22,6 +22,10 @@ footer {
   object-fit: contain;
 }
 
+.footer__notice {
+  margin: 0.5rem 0 0;
+}
+
 @media screen and (max-width: 600px) {
   footer {
     padding: 0.55rem 0 calc(0.75rem + env(safe-area-inset-bottom));
